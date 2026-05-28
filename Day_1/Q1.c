@@ -6,7 +6,7 @@ int main()
 {
     long long n, sum ;
 
-    printf("Enter the Natural Number upto which the sum has to be calculated: \n");
+    printf("Enter the Natural Number upto which the sum has to be calculated: ");
     scanf("%lld", &n);
 
     if(n <= 0)
