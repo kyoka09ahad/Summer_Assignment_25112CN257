@@ -6,7 +6,7 @@ int main()
 {
     long long n, sum ;
 
-    printf("Enter the Natural Number upto which the sum has to be calculated: ");
+    printf("Enter the Natural Number upto which the sum of all numbers has to be calculated: ");
     scanf("%lld", &n);
 
     if(n <= 0)
@@ -17,7 +17,7 @@ int main()
 
     sum = n*(n+1)/2;
 
-    printf("Thus, the sum of first %lld Natural Numbers is: %lld\n", n, sum);
+    printf("Thus, the Sum of First %lld Natural Numbers is: %lld\n", n, sum);
 
     return 0 ;
 }

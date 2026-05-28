@@ -7,7 +7,7 @@ int main()
     int n, i;
     long long int fact = 1;
 
-    printf("Enter the number whose Factorial has to be calculated: ");
+    printf("Enter the Number whose Factorial has to be calculated: ");
     scanf("%d", &n);
 
     if (n < 0)
@@ -18,7 +18,7 @@ int main()
 
     else if (n == 0)
     {
-        printf("The factorial of 0 is equal to 1 \n");
+        printf("The Factorial of '0' is equal to 1 \n");
         return 1;
     }
 
@@ -27,7 +27,7 @@ int main()
         fact = fact * i;
     }
 
-    printf("The factorial of %d is equal to %lld \n", n, fact);
+    printf("The Factorial of '%d' is equal to %lld \n", n, fact);
 
     return 0;
 }

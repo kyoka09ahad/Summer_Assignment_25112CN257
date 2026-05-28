@@ -17,7 +17,7 @@ int main ()
         count++;
     }
 
-    printf("The count of digits in the entered number %lld are: %lld", num, count);
+    printf("The Count of Digits in the Entered Number %lld are: %lld", num, count);
 
     return 0;
 

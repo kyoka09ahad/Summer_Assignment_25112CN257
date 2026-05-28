@@ -9,7 +9,7 @@ int main()
     printf("Enter the Number whose Multiplication Table has to be printed: ");
     scanf("%d", &num);
 
-    printf("The Multiplication Table of the number %d is given as\n", num);
+    printf("The Multiplication Table of The Number %d is given as\n", num);
 
     for(i=1; i<=10; i++)
     {   
