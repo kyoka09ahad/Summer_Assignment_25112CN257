@@ -7,7 +7,11 @@ int main ()
     long long int num, num1, count=0;
 
     printf("Enter the number: ");
-    scanf("%lld", &num);
+    if(scanf("%lld", &num) != 1)
+    {
+        printf("Invalid Input: 'Enter Numers Only'.\n");
+       return  1;
+    }
 
     num1 = num;
 

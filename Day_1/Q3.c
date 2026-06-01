@@ -8,7 +8,11 @@ int main()
     long long int fact = 1;
 
     printf("Enter the Number whose Factorial has to be calculated: ");
-    scanf("%d", &n);
+    if(scanf("%d", &n) != 1)
+    {
+    printf("Invalid Input: 'Enter Numers Only'.\n");
+       return  1;
+    }
 
     if (n < 0)
     {

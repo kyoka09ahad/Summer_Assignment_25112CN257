@@ -7,7 +7,11 @@ int main()
     long long n, sum ;
 
     printf("Enter the Natural Number upto which the sum of all numbers has to be calculated: ");
-    scanf("%lld", &n);
+    if(scanf("%lld", &n) != 1)
+    {
+       printf("Invalid Input: 'Enter Numers Only'.\n");
+       return  1;
+    }
 
     if(n <= 0)
     {
