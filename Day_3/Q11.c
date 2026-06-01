@@ -9,14 +9,14 @@ int main()
     printf("Enter the first number: ");
     if(scanf("%lld", &num1) != 1)
     {
-        printf("Invalid Input: 'Enter Numers Only'.\n");
+        printf("Invalid Input: 'Enter Numbers Only'.\n");
         return  1;
     }
 
     printf("Enter the second number: ");
     if(scanf("%lld", &num2) != 1)
     {
-        printf("Invalid Input: 'Enter Numers Only'.\n");
+        printf("Invalid Input: 'Enter Numbers Only'.\n");
         return  1;
     }
 
