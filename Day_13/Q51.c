@@ -1,0 +1,46 @@
+//Write a program to find largest and smallest element.
+
+#include <stdio.h>
+
+int main()
+{
+long length, i;
+
+printf("Enter the length of array: ");
+if(scanf("%ld", &length) != 1 || length <= 0)
+{
+    printf("Invalid Input.\n");
+    return 1;
+}
+
+long long array[length], sum = 0, average;
+printf("Input the Elements into the Array:\n");
+for(i=0; i<length; i++)
+{
+    printf("Enter the %ld%s element: ",i+1, (i+1<=3) ? ((i+1==1) ? "st" : ((i+1==2) ? "nd" : "rd")) :"th");
+    if(scanf("%lld", &array[i]) != 1)
+    {
+        printf("Invalid Input.\n");
+        return 1;
+    }
+    printf("\n");
+}
+
+long long max, min;
+max = min = array[0];
+for(i=1; i<length; i++)
+{
+    if(array[i] > max)
+    {
+        max = array[i];
+    }
+    if(array[i] < min)
+    {
+        min = array[i];
+    }
+}
+printf("The Largest Element in the Array is %lld\n\n", max);
+printf("The Smallest Element in the Array is %lld\n", min);
+
+return 0;
+}
