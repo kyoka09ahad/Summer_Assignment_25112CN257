@@ -1,5 +1,7 @@
 //Write a program to Move zeroes to end.
 
+#include <stdio.h>
+
 void moveZeroes(long long array[], long long n) 
 {
     long long count = 0;
