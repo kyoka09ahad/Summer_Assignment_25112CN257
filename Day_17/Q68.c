@@ -38,7 +38,51 @@ int main()
 
     long long array[length];
     printf("Input the Elements into the Array:\n");
-    inputArray(array, length);
 
+    if(!inputArray(array, length))
+    {return 1;}
+
+    printf("\n");
+
+    long long common[length];
+
+    long long count = 0;
+
+    for(long long i = 0; i < length; i++)
+    {
+        int visited = 0;
+
+        for(long long k = 0; k < i; k++)
+        {
+            if(array[i] == array[k])
+            {
+                visited = 1;
+                break;
+            }
+        }
+
+        if(visited)  continue;
+
+        long long frequency = 1;
+
+        for(long long j = i + 1; j < length; j++)
+        {
+            if(array[i] == array[j])
+            {frequency++;}
+        }
+
+        if(frequency > 1)
+        {common[count++] = array[i];}
+    }
+
+    if(count == 0)
+    {printf("No common elements found.\n");}
+
+    else
+    {
+        printf("The Common Elements in the Array are:\n");
+        printArray(common, count);
+    }
     
+    return 0;
 }
