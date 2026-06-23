@@ -6,11 +6,12 @@
 
 int main()
 {
-    printf("To Check whether the Two Strings are Anagram of each other.\n");
+    printf("To Check whether the Two Strings are Anagram of each other.");
+    printf("\nHere, we ignore Spaces and Punctuation.\n");
     
     char str1[1000], str2[1000];
     
-    printf("Enter the First String: ");
+    printf("\nEnter the First String: ");
     if (fgets(str1, sizeof(str1), stdin) == NULL)
     {
         printf("Input error.\n");
@@ -32,11 +33,33 @@ int main()
     {str2[--length2] = '\0';}
     printf("\n");
 
-    if(length1 != length2)
+    int counts[256] = {0};
+    for (int i = 0; i < length1; i++) 
     {
-        fprintf(stderr,"Error: Both the Strings should have same Length.\n");
-        return 1;
+        if (isalnum((unsigned char)str1[i]))
+        {counts[tolower((unsigned char)str1[i])]++;}
     }
-
-    
+ 
+    for (int i = 0; i < length2; i++) 
+    {
+        if (isalnum((unsigned char)str2[i]))
+        {counts[tolower((unsigned char)str2[i])]--;}
+    }
+ 
+    int isAnagram = 1;
+    for (int i = 0; i < 256; i++) 
+    {
+        if (counts[i] != 0) 
+        {
+            isAnagram = 0;
+            break;
+        }
+    }
+ 
+    if (isAnagram)
+    printf("\nThe two strings ARE Anagrams of each other.\n");
+    else
+    printf("\nThe two strings are NOT Anagrams of each other.\n");
+ 
+    return 0;   
 }
