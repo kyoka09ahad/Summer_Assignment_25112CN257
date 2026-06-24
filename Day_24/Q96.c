@@ -1,60 +1,35 @@
 //Write a program to Remove duplicate characters.
 
-//Write a program to Find first repeating character.
-
 #include <stdio.h>
 #include <string.h>
-#include <ctype.h>
 
-int main()
+int main() 
 {
     char str[1000];
- 
+    int i, j, k;
+
     printf("Enter a string: ");
     if (fgets(str, sizeof(str), stdin) == NULL)
     {
         printf("Input error.\n");
         return 1;
     }
-    printf("\n");
 
-    size_t length = strlen(str);
-    while (length > 0 && (str[length - 1] == '\n' || str[length - 1] == '\r'))
-    {str[--length] = '\0';}
-
-    long long count = 0;
-    for(long long i = 0; i < length; i++)
+    for (i = 0; str[i] != '\0'; i++) 
     {
-        int visited = 0;
-
-        for(long long k = 0; k < i; k++)
+        for (j = i + 1; str[j] != '\0'; ) 
         {
-            if(str[i] == str[k])
+            if (str[i] == str[j]) 
             {
-                visited = 1;
-                break;
-            }
+                for (k = j; str[k] != '\0'; k++) 
+                {str[k] = str[k + 1];}
+            } 
+            else 
+            {j++;}
         }
-
-        if(visited)  continue;
-
-        if(isspace(str[i]))  continue;
-
-        long long frequency = 1;
-
-        for(long long j = i + 1; j < length; j++)
-        {
-            if(str[i] == str[j])
-            {frequency++;}
-        }
-        
-        if(frequency > 1)
-        {
-            count++;
-            continue;
-        }
-
     }
+
+    printf("String after removing duplicates: %s\n", str);
 
     return 0;
 }
