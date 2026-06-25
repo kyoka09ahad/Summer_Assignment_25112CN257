@@ -3,13 +3,10 @@
 #include <stdio.h>
 #include <string.h>
 
-#define MAX_WORDS 100
-#define MAX_LEN 50
-
 int main() 
 {
     int num;
-    char words[MAX_WORDS][MAX_LEN], temp[MAX_LEN];
+    char words[100][1000], temp[1000];
 
     printf("Enter number of words: ");
     scanf("%d", &num);
@@ -32,7 +29,7 @@ int main()
     }
 
     printf("\nWords sorted by length:\n");
-    
+
     for (int i = 0; i < num; i++) 
     {printf("%s\n", words[i]);}
 
