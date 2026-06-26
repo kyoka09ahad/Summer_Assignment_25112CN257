@@ -9,18 +9,18 @@ int main()
 {
     char account[50];
     char pin[10];
-    char correctAccount[] = "abdul123@atm";
-    char correctPin[] = "1234";
-
+    char correctAccount[] = "abdul123@ycyc";
+    char correctPin[] = "4789";
     srand(time(0));
-    int balance = (rand() % 10000) + 1, amount;
+    long long balance = (rand() % 10000) + 1, amount;
     int choice;
 
     printf("=============================ATM MENU===========================================\n");
     printf("=====================WELCOME TO YCYC BANK=======================================\n");
 
+    printf("\n//Your Memory: I remember Account Number is %s.//\n", correctAccount);
     printf("Enter Account Number: ");
-    scanf("%49s", account);
+    scanf("%s", account);
 
     int len = strlen(account);
 
@@ -31,6 +31,7 @@ int main()
         return 1;
     }
 
+    printf("\n//Your Memory: I remember pin is %s.//\n", correctPin);
     printf("Enter PIN: ");
     scanf("%9s", pin);
 
@@ -49,59 +50,61 @@ int main()
         printf("4. Exit\n");
 
         printf("Enter your choice: ");
-        scanf("%d", &choice);
+        if(scanf("%d", &choice) != 1 || (choice <= 0 && choice > 4))
+        {
+            printf("\nINVALID Choice.\n");
+            break;
+        }
 
         switch (choice)
         {
             case 1:
-                printf("Current Balance: ₹%.2f\n", balance);
-                break;
+            printf("Current Balance: %lldRs\n", balance);
+            break;
 
             case 2:
-                printf("Enter amount to deposit: ");
-                scanf("%f", &amount);
+            printf("Enter Amount to Deposit: ");
+            scanf("%lld", &amount);
 
-                if (amount <= 0)
-                {
-                    printf("Invalid amount.\n");
-                }
-                else
-                {
-                    balance += amount;
-                    printf("₹%.2f deposited successfully.\n", amount);
-                    printf("Updated Balance: ₹%.2f\n", balance);
-                }
-                break;
+            if (amount >= 100000)
+            {printf("Invalid Transaction (Maximum ATM Cash Limit).\n");}
+
+            else
+            {
+                balance += amount;
+                printf("%lldRs Deposited Successfully.\n", amount);
+                printf("Updated Balance: %lldRs\n", balance);
+            }
+            break;
 
             case 3:
-                printf("Enter amount to withdraw: ");
-                scanf("%f", &amount);
+            printf("Enter Amount to Withdraw: ");
+            scanf("%lld", &amount);
 
-                if (amount <= 0)
-                {
-                    printf("Invalid amount.\n");
-                }
-                else if (amount > balance)
-                {
-                    printf("Insufficient Balance.\n");
-                }
-                else
-                {
-                    balance -= amount;
-                    printf("₹%.2f withdrawn successfully.\n", amount);
-                    printf("Remaining Balance: ₹%.2f\n", balance);
-                }
-                break;
+            if (amount <= 0)
+            {printf("Invalid amount.\n");}
+
+            else if (amount > balance)
+            {printf("Insufficient Balance.\n");}
+
+            else
+            {
+                balance -= amount;
+                printf("%lldRs Withdrawn Successfully.\n", amount);
+                printf("Remaining Balance: %lldRs\n", balance);
+            }
+            break;
 
             case 4:
-                printf("Thank you for using the ATM.\n");
-                break;
+            printf("Thank you for using the ATM.\n");
+            break;
 
             default:
-                printf("Invalid Choice.\n");
+            printf("\nINVALID Choice.\n");
         }
 
-    } while (choice != 4);
+    } 
+    while (choice != 4);
 
     return 0;
 }

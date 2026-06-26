@@ -11,9 +11,13 @@ int main()
     printf("===== QUIZ APPLICATION =====\n\n");
 
     printf("Q1. What is the capital of India?\n");
-    printf("A. Mumbai\nB. Delhi\nC. Chennai\nD. Kolkata\n");
+    printf("A. Mumbai\nB. New Delhi\nC. Delhi\nD. Kolkata\n");
     printf("Enter your answer: ");
-    scanf(" %c", &answer);
+    if(!isalpha(scanf(" %c", &answer)))
+    {
+        printf("Please Enter the Correct Alphabet of Choices.\n");
+        return 1;
+    }
 
     if (toupper(answer) == 'B')
     {
@@ -22,13 +26,17 @@ int main()
     }
     else
     {
-        printf("Wrong! Correct answer is B. Delhi\n\n");
+        printf("Wrong! Correct answer is B. New Delhi\n\n");
     }
 
-    printf("Q2. Which language is known as the mother of many programming languages?\n");
-    printf("A. Python\nB. Java\nC. C\nD. HTML\n");
+    printf("Q2. How many Nations are hosting the 2026 FIFA World Cup?\n");
+    printf("A. 2\nB. 4\nC. 3\nD. 1\n");
     printf("Enter your answer: ");
-    scanf(" %c", &answer);
+    if(!isalpha(scanf(" %c", &answer)))
+    {
+        printf("Please Enter the Correct Alphabet of Choices.\n");
+        return 1;
+    }
 
     if (toupper(answer) == 'C')
     {
@@ -37,43 +45,55 @@ int main()
     }
     else
     {
-        printf("Wrong! Correct answer is C. C\n\n");
+        printf("Wrong! Correct answer is C. 3\n\n");
     }
 
-    printf("Q3. How many days are there in a leap year?\n");
-    printf("A. 364\nB. 365\nC. 366\nD. 367\n");
+    printf("Q3. Which Nation has won the 2022 FIFA World Cup?\n");
+    printf("A. France\nB. Argentina\nC. Netherlands\nD. Portugal\n");
     printf("Enter your answer: ");
-    scanf(" %c", &answer);
+    if(!isalpha(scanf(" %c", &answer)))
+    {
+        printf("Please Enter the Correct Alphabet of Choices.\n");
+        return 1;
+    }
 
-    if (toupper(answer) == 'C')
+    if (toupper(answer) == 'B')
     {
         printf("Correct!\n\n");
         score++;
     }
     else
     {
-        printf("Wrong! Correct answer is C. 366\n\n");
+        printf("Wrong! Correct answer is B. Argentina\n\n");
     }
 
-    printf("Q4. Which symbol is used to end a statement in C?\n");
-    printf("A. :\nB. ,\nC. ;\nD. .\n");
+    printf("Q4. Which Football Club has defended their UCL Trophy in 2026?\n");
+    printf("A. PSG\nB. Bayern Munich\nC. Arsenal\nD. FC Barcelona\n");
     printf("Enter your answer: ");
-    scanf(" %c", &answer);
+    if(!isalpha(scanf(" %c", &answer)))
+    {
+        printf("Please Enter the Correct Alphabet of Choices.\n");
+        return 1;
+    }
 
-    if (toupper(answer) == 'C')
+    if (toupper(answer) == 'A')
     {
         printf("Correct!\n\n");
         score++;
     }
     else
     {
-        printf("Wrong! Correct answer is C. ;\n\n");
+        printf("Wrong! Correct answer is A. PSG\n\n");
     }
 
     printf("Q5. Which keyword is used to return a value from a function?\n");
     printf("A. break\nB. continue\nC. return\nD. exit\n");
     printf("Enter your answer: ");
-    scanf(" %c", &answer);
+    if(!isalpha(scanf(" %c", &answer)))
+    {
+        printf("Please Enter the Correct Alphabet of Choices.\n");
+        return 1;
+    }
 
     if (toupper(answer) == 'C')
     {
@@ -90,6 +110,7 @@ int main()
 
     if (score == 5)
     printf("Excellent!\n");
+    
     else if (score >= 3)
     printf("Good Job!\n");
     else
