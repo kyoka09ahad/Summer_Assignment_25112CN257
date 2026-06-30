@@ -31,15 +31,17 @@ void computerchoice(int n)
 int main()
 {
     srand(time(0));
-    int player, computer = rand() % 3;
+    int player, computer;
     int playerpoint = 0, computerpoint = 0;
 
     printf("\n----------------------------SNAKE, WATER, GUN----------------------------\n");
 
     do
     {
+       computer = rand() % 3;
+
        printf("\nChoose 0 for Snake, 1 for water and 2 for Gun \n");
-       if(scanf("%d", &player) != 1 || (player < 0 && player > 2))
+       if(scanf("%d", &player) != 1 || (player < 0 || player > 2))
        {
            printf("Invalid Input.\n");
            return 1;
@@ -68,7 +70,7 @@ int main()
            printf("You Lose!\n");
            printf("Score: You-%d\tComputer-%d\n", playerpoint, ++computerpoint);
        }
-    else if (player == 1 && computer == 1)
+       else if (player == 1 && computer == 1)
        {
            printf("Its a Draw!\n");
            printf("Score: You-%d\tComputer-%d\n", playerpoint, computerpoint);
@@ -98,7 +100,7 @@ int main()
            printf("Something went wrong!");
        }
     }
-    while(playerpoint == 5 || computerpoint == 5);
+    while(playerpoint != 5 && computerpoint != 5);   // FIX: != / && instead of == / ||
 
     if(playerpoint == 5)
     {
@@ -111,4 +113,6 @@ int main()
         printf("\nComputer Won the Round.\n");
         return 0;
     }
+
+    return 0;
 }
