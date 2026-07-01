@@ -100,7 +100,7 @@ int main()
            printf("Something went wrong!");
        }
     }
-    while(playerpoint != 5 && computerpoint != 5);   // FIX: != / && instead of == / ||
+    while(playerpoint != 5 && computerpoint != 5);
 
     if(playerpoint == 5)
     {
